@@ -18,16 +18,32 @@ const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
  try{
     //если выражение не соответствует введенному email
     if(!emailRegex.test($mailInp)){
+        $errorMessage.textContent = "Неверный формат email"
         throw new Error("Неверный формат email");
     }
     //Если пароль не соответствует 
     if(!passwordRegex.test($passwordInp)){
+        $errorMessage.textContent = "Пароль должен содержать минимум 6 символов, включая буквы и цифры"
         throw new Error("Пароль должен содержать минимум 6 символов, включая буквы и цифры");
     }
     if($passwordInp !== $confirmPasswordInp ){
+        $errorMessage.textContent = "Пароли не совпадают"
         throw new Error("Пароли не совпадают")
     }
     //Сохраняем в LocalStorage
+    const user = {$mailInp,$passwordInp};
+    localStorage.setItem("user", JSON.stringify(user));
     
+    //Сообщение об успешной регистрации
+    $errorMessage.textContent = "Регистрация прошла успешно!";
+    $errorMessage.style.color = "green";
+    $regForm.reset()
  }
+ 
+catch (error) {
+   // Выводим сообщение об ошибке
+   $errorMessage.textContent = error.message;
+   $errorMessage.style.color = "red";
+}
 })
+
