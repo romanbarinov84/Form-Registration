@@ -7,6 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="container">
+        <h2 class="containerText">Регистрация</h2>
+        <form id="registration-form">
+            <label for="email">Email:</label>
+            <input class="email" type="email" id="email" name="email" placeholder="enter your email">
+
+            <label for="pasword">Пароль(от 6 символов)</label>
+            <input type="password" id="password" name="pasword" placeholder="enter your pasword">
+
+            <label for="confirm-pasword">Повторите ваш пароль:</label>
+            <input type="pasword" id="confirm-pasword" name="confirm-pasword" placeholder="confirm your pasword" required>
+
+            <button class="Btn" type="submit">Зарегистрироватся</button>
+        </form>
+
+        <p class="error-message" id="error-message"></p>
+    </div>
     
 
     <script src="main.js"></script>

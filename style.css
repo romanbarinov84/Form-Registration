@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.container{
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 4px 8px rgba(0, 0, 200, .2);
+}
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+label{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #333;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+input::placeholder{
+    color: lightblue;
+}
+input:focus{
+    outline: none;
+    border-color: #5ab6e3;
+}
+button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #5da8f9;
+    color: lavender;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: #449cfa;
+    color: #f4f4f9;
+}
+button:active{
+    background-color: #0a7cf7;
+    color: #fcfcff;
+}
+
+.error-message{
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+input,button{
+    animation: fadeIn 0.3s ease-in-out;
+   
+}
+
+@keyframes fadeIn {
+ from{
+    opacity: 0;
+ }
+ to{
+    opacity: 1;
+ }
+}
